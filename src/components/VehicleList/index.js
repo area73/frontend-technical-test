@@ -6,16 +6,23 @@ export default function VehicleList() {
   // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
 
-  console.log(loading);
-  console.log(error);
-  console.log(vehicles);
-
   if (loading) {
     return <div data-testid="loading">Loading</div>;
   }
 
   if (error) {
-    return <div data-testid="error">{ error }</div>;
+    /**
+     * I don't want to show the real error message that comes from fetch, because of two things.
+     * The first one is that I'm giving some info to an attacker , so I try to follow the rule of "silent is gold"
+     * The other reason is that for a user having something like:
+     * "SyntaxError: Unexpected token < in JSON at position 0"
+     * is confusing and not helping the user.
+     *
+     * I log the error only for this challenge purpose, but in a real scenario I wouldn't log it
+     * in production
+     */
+    console.error(error);
+    return <div data-testid="error">An error ocurred, please try again later</div>;
   }
 
   return (

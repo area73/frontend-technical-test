@@ -4,4 +4,6 @@
  * @param {string} apiUrl
  * @return {Promise<Object>}
  */
-export const request = async (apiUrl) => fetch(apiUrl).then((response) => response.json());
+export const request = async (apiUrl) => fetch(apiUrl)
+  .then((response) => response.json())
+  .catch((error) => Promise.reject(error));
