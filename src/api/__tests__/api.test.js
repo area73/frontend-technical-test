@@ -3,7 +3,7 @@ import { request } from '../helpers';
 
 jest.mock('../helpers');
 
-describe.skip('getData Tests', () => {
+describe('getData Tests', () => {
   const safelyCallApi = async () => {
     try {
       return await getData();
@@ -38,7 +38,7 @@ describe.skip('getData Tests', () => {
     expect(request).toBeCalledWith('/api/vehicle_xj.json');
   });
 
-  it('Should ignore failed API calls during traversing', () => {
+  it.only('Should ignore failed API calls during traversing', () => {
     request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
     request.mockRejectedValueOnce('An error occurred');

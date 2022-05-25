@@ -13,15 +13,15 @@ export default function VehicleList() {
   if (error) {
     /**
      * I don't want to show the real error message that comes from fetch, because of two things.
-     * The first one is that I'm giving some info to an attacker , so I try to follow the rule of "silent is gold"
+     * The first one is that we are giving some value info to an attacker , so I try to follow the rule of "silent is gold"
      * The other reason is that for a user having something like:
      * "SyntaxError: Unexpected token < in JSON at position 0"
-     * is confusing and not helping the user.
+     * is confusing and not helping the user, so a prefer to lgo an standard message.
      *
      * I log the error only for this challenge purpose, but in a real scenario I wouldn't log it
      * in production
      */
-    console.error(error);
+    // console.error(error);
     return <div data-testid="error">An error ocurred, please try again later</div>;
   }
 
