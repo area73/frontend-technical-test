@@ -6,6 +6,10 @@ export default function VehicleList() {
   // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
 
+  console.log(loading);
+  console.log(error);
+  console.log(vehicles);
+
   if (loading) {
     return <div data-testid="loading">Loading</div>;
   }
