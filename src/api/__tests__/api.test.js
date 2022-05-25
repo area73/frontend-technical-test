@@ -38,11 +38,10 @@ describe('getData Tests', () => {
     expect(request).toBeCalledWith('/api/vehicle_xj.json');
   });
 
-  it.only('Should ignore failed API calls during traversing', () => {
-    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
+  it('Should ignore failed API calls during traversing', () => {
+    request.mockResolvedValueOnce([{ id: 'ftype', apiUrl: '/api/vehicle_ftype.json' }, { id: 'badVehicle', apiUrl: '/api/vehicle_xj.json' }]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
     request.mockRejectedValueOnce('An error occurred');
-
     expect(safelyCallApi()).resolves.toEqual([
       { apiUrl: '/api/vehicle_ftype.json', id: 'ftype', price: '£36,000' }
     ]);

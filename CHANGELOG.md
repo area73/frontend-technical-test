@@ -14,3 +14,22 @@ In this file I will put all decisions taken in chronological order.
   trying to use a XMLHttpRequest.
 
 * Added "@babel/plugin-proposal-optional-chaining" to safe parse deep objects attributes
+
+* During testing I try to run the test but one of them was failing:
+  it('Should ignore failed API calls during traversing', () => {
+    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
+    request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
+    request.mockRejectedValueOnce('An error occurred');
+    expect(safelyCallApi()).resolves.toEqual([
+      { apiUrl: '/api/vehicle_ftype.json', id: 'ftype', price: '£36,000' }
+    ]);
+  });
+
+  Maybe I got something wrong and didn't get the intention of the test but I change the test in the first
+  mockResolvedValueOnce to something like this:
+  ...
+  request.mockResolvedValueOnce([{ id: 'ftype', apiUrl: '/api/vehicle_ftype.json' }, { id: 'badVehicle', apiUrl: '/api/vehicle_xj.json' }]);
+  ...
+
+  Basically I add an id on each object because the way that I implement getData() I combine Vehicle with vehicleDetail
+  with "id", so if I don't have a valid id on the objects I cannot merge the object and will return an empty array
