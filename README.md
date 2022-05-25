@@ -6,4 +6,4 @@ Thanks for giving me the opportunity to take this awesome code challenge test, o
 
 Below you can find more info about the decisions that I took to fulfill your requirements.
 
-Please also check CHANGELOG.md where I state chronologically the things that I made and why I did them.
+Please also check CHANGELOG.md where I state chronologically the things that I made, and why I did them.

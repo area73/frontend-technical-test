@@ -4,6 +4,4 @@
  * @param {string} apiUrl
  * @return {Promise<Object>}
  */
-export async function request(apiUrl) {
-  return apiUrl;
-}
+export const request = async (apiUrl) => fetch(apiUrl).then((response) => response.json());
