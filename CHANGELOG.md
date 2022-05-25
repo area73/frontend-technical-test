@@ -33,3 +33,8 @@ In this file I will put all decisions taken in chronological order.
 
   Basically I add an id on each object because the way that I implement getData() I combine Vehicle with vehicleDetail
   with "id", so if I don't have a valid id on the objects I cannot merge the object and will return an empty array
+
+* I change the response of this test:
+    it('Should make an api call to receive a list of general vehicle information ...
+    because I pass also host and port to URL and also used the constants defined on  config file:
+        expect(request).toBeCalledWith(`${HOST}${PORT}${API_DIR}${VEHICLES_RESOURCE}`);
