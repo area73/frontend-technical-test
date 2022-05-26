@@ -58,7 +58,7 @@ In this file I will put all decisions taken in chronological order.
 
 * I used Lighthouse to check for WCAG 2.1 and accessibility issues
 
-* Do to lack of time, I only made animations on transitions between mobile and tablet mediaqueries
+* Do to lack of time, I only made animations on transitions **between mobile and tablet media queries**
 
 ### Optional "Nice to have"
 
@@ -66,9 +66,11 @@ In this file I will put all decisions taken in chronological order.
 
 The idea of been an accesible modal is to mutate DOM with tie info on modal and to refer that container with the element that is firing the event, you can achieve that by using aria labels.
 
-Also you have to take into account key navigation and specially take care about key tab and decide if returning focus on enter, and also privide a tabindex.
+Also you have to take into account key navigation and specially take care about key tab and decide if returning focus on enter, and also provide a tabindex.
 
-* I think trying to add Redux is overkill in this kind of application
+* I think trying to add Redux is overkill in this kind of application, maybe in the future if the
+  application grows and had more functionality and need to keep the state we could think of adding
+  redux, but I believe that now will be overengineering.
 
 
 
