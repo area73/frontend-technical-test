@@ -70,7 +70,7 @@ functional library like `ramda` or added an ADT library like `crocks or folktale
 
 * Do to lack of time, I only made animations on transitions **between mobile and tablet media queries**
 
-### Optional "Nice to have"
+## Optional "Nice to have"
 
 * I didn't implement modal because an accesible modal takes a lot of time and there are very nice solutions for react or any other framework.
 
