@@ -15,6 +15,16 @@ In this file I will put all decisions taken in chronological order.
   if for some reason we couldn't use fetch then we could use a library like Axios or directly
   trying to use a XMLHttpRequest.
 
+* **React.Suspense:** We could use react suspense to handle waiting or error states on components that
+are fetching external data like the one we have on VehicleList.
+
+This utility is very handy and removes some code from the original component, but I didn't
+implement it because on your package.json you have set react version to "react": "^17.0.1", and this
+code is experimental until version 18.
+
+* **functional library:** since one of the requirements was not to use external libraries I didn't use any
+functional library like `ramda` or added an ADT library like `crocks or folktale`.
+
 * Added "@babel/plugin-proposal-optional-chaining" to safe parse deep objects attributes
 
 * During testing I try to run the tests in api but several of them failed, i.e.:
@@ -71,6 +81,3 @@ Also you have to take into account key navigation and specially take care about 
 * I think trying to add Redux is overkill in this kind of application, maybe in the future if the
   application grows and had more functionality and need to keep the state we could think of adding
   redux, but I believe that now will be overengineering.
-
-
-
