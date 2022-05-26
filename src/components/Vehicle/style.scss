@@ -1,0 +1,50 @@
+.vehicle {
+  border-bottom: #EEF1F1 1px solid;
+  display: grid;
+  grid-template-areas: "a b"
+    "a c"
+    "a d";
+  grid-template-columns: minmax(0, 180px) minmax(auto,1fr);
+  grid-template-rows: 1fr min-content 1fr;
+  // width: calc(100% - 80px);
+
+  &__picture {
+    display: flex;
+    grid-area: a;
+    padding-right: 20px;
+  }
+
+  &__image {
+    height: fit-content;
+    width: 100%;
+  }
+
+  &__name {
+    align-self: flex-end;
+    color: #0C121C;
+    font-size: 14px;
+    font-weight: 600;
+    grid-area: b;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    color: #4a4f54;
+    font-size: 12px;
+    font-weight: 400;
+    grid-area: c;
+    padding-bottom: 16px;
+    padding-top: 8px;
+  }
+
+  &__description {
+    color: #4a4f54;
+    font-size: 12px;
+    font-stretch: ultra-expanded;
+    font-stretch: expanded;
+    font-weight: 200;
+    grid-area: d;
+
+  }
+}
+

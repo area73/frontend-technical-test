@@ -1,3 +1,19 @@
-.VehicleList {
+@use "/node_modules/sass-mq/mq";
+
+.vehicleList {
+  display: grid;
   width: 100%;
+
+
+  @include mq.mq($from:"tablet") {
+
+  }
+
+  @include mq.mq($from:"desktop") {
+
+  }
+
+  &__vehicle {
+
+  }
 }

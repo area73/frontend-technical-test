@@ -1,5 +1,18 @@
-.root {
-  margin: 14px;
-  padding: 12px;
-  z-index: 12;
+// normalize and resets
+@use "/node_modules/css-reset-and-normalize/scss/reset-and-normalize";
+
+// media queries
+$breakpoints: (
+  mobile: 0px,
+  tablet: 800px,
+  desktop: 1600px,
+);
+
+@use "/node_modules/sass-mq/mq" with (
+  $breakpoints: $breakpoints,
+);
+
+body {
+  font-family: "Montserrat", serif;
+  letter-spacing: 1px;
 }
