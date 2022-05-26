@@ -1,16 +1,27 @@
-@use "/node_modules/sass-mq/mq";
+// media queries
+$breakpoints: (
+  mobile: 0px,
+  tablet: 800px,
+  desktop: 1600px,
+);
+
+@use "/node_modules/sass-mq/mq" with (
+  $breakpoints: $breakpoints,
+);
 
 .vehicleList {
   display: grid;
   width: 100%;
 
-
   @include mq.mq($from:"tablet") {
-
+    grid-template-columns: 1fr 1fr;
   }
 
   @include mq.mq($from:"desktop") {
-
+    // I wanted to have a fix maximum in desktop , because in ultrawide moitors images would be too big.
+    // So is it is like having a wrapper of about 350 x 4 = 1400px
+    grid-template-columns: repeat(4,minmax(0, 350px));
+    width: fit-content;
   }
 
   &__vehicle {

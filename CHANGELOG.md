@@ -52,3 +52,6 @@ In this file I will put all decisions taken in chronological order.
 * reset-normalize:  Since we are not using postCSS I decide to use [css-reset-and-normalize](https://www.npmjs.com/package/css-reset-and-normalize)
 
 * added prop-types for type checking
+
+* for simplicity I work with px instead of em or rem. In a real project I have a post css task that
+  changes px to rem.
