@@ -55,3 +55,16 @@ In this file I will put all decisions taken in chronological order.
 
 * for simplicity I work with px instead of em or rem. In a real project I have a post css task that
   changes px to rem.
+
+* I used Lighthouse to check for WCAG 2.1 and accessibility issues
+
+* Do to lack of time, I only made animations on transitions between mobile and tablet mediaqueries
+
+### Optional "Nice to have"
+
+* I didn't implement modal because an accesible modal takes a lot of time and there are very nice solutions for react or any other framework.
+
+The idea of been an accesible modal is to mutate DOM with tie info on modal and to refer that container with the element that is firing the event, you can achieve that by using aria labels.
+
+Also you have to take into account key navigation and specially take care about key tab and decide if returning focus on enter, and also privide a tabindex.
+
