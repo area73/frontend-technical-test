@@ -17,6 +17,21 @@ $breakpoints: (
 }
 
 
+@keyframes fadeInVehicle {
+
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    width: translateX(0);
+  }
+}
+
+
+
 @keyframes textMobileTablet {
 
   from {

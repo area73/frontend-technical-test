@@ -68,3 +68,7 @@ The idea of been an accesible modal is to mutate DOM with tie info on modal and 
 
 Also you have to take into account key navigation and specially take care about key tab and decide if returning focus on enter, and also privide a tabindex.
 
+* I think trying to add Redux is overkill in this kind of application
+
+
+

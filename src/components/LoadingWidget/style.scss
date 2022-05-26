@@ -1,3 +1,13 @@
 .loadingWidget {
-  width: 100%;
+  background-image: url("http://localhost:8080/images/loading.gif");
+  background-position: center 20px;
+  background-repeat: no-repeat;
+  background-size: 128px;
+  border: 1px solid #ccc;
+  height: 200px;
+  margin: 20px;
+  padding-bottom: 40px;
+  padding-top: 180px;
+  text-align: center;
+  width: 200px;
 }
