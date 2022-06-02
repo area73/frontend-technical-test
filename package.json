@@ -61,5 +61,8 @@
   },
   "browserslist": [
     "last 2 chrome versions"
-  ]
+  ],
+  "volta": {
+    "node": "16.15.1"
+  }
 }

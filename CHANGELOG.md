@@ -4,7 +4,7 @@ In this file I will put all decisions taken in chronological order.
 
 ## Architecture JS
 
-* Using Yarn and adding yarn.lock to git
+* Using Yarn and adding yarn.lock to git (just a matter of preferences)
 
 * Adding readme and changelog
 
@@ -19,11 +19,11 @@ In this file I will put all decisions taken in chronological order.
 are fetching external data like the one we have on VehicleList.
 
 This utility is very handy and removes some code from the original component, but I didn't
-implement it because on your package.json you have set react version to "react": "^17.0.1", and this
-code is experimental until version 18.
+implement it because on your package.json you have set react version to "react": "^17.0.1", and
+I believe that this code is experimental until version 18.
 
-* **functional library:** since one of the requirements was not to use external libraries I didn't use any
-functional library like `ramda` or added an ADT library like `crocks or folktale`.
+* **functional library:** since one of the requirements was not to use external libraries I didn't
+ use any functional library like `ramda` or added an ADT library like `crocks or folktale`.
 
 * Added "@babel/plugin-proposal-optional-chaining" to safe parse deep objects attributes
 
@@ -51,6 +51,15 @@ functional library like `ramda` or added an ADT library like `crocks or folktale
     because I pass also host and port to URL and also used the constants defined on  config file, so
      if for some reason Host or main json file name change I won't get an error:
         expect(request).toBeCalledWith(`${HOST}${PORT}${API_DIR}${VEHICLES_RESOURCE}`);
+
+* Since we are not using a strong typed system we have some issues on the test do to the fact that the shape of the data is not what we were expecting.
+
+On `VehicleList.test.js` we are mocking the response from the hook `useData`
+which is returning an array of 3 elements , the first one is a boolean,
+the second one is a string and the third one is an array.
+
+The problem comes with the test because we are mocking the third param
+as a string and it is suppose to be an array. So I change the test
 
 ## Style and responsive design
 
