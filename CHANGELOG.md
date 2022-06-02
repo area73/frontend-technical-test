@@ -61,6 +61,9 @@ the second one is a string and the third one is an array.
 The problem comes with the test because we are mocking the third param
 as a string and it is suppose to be an array. So I change the test
 
+Another issue is that vehicle list didn't had `data-testid="result"` , although in this case I think we could go for a better solution by using
+aria roles for example in the `<li>`tag such as `expect(queryByRole('listitem')).toBeGreaterThan(0);`
+
 ## Style and responsive design
 
 * Mobile-first approach: In order to fulfill this requirement and taking into account that we are

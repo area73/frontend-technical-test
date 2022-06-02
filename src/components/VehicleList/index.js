@@ -45,7 +45,7 @@ export default function VehicleList() {
   }
 
   return (
-    <ul className="vehicleList">
+    <ul className="vehicleList" data-testid="results">
       {vehicles.map((props) => {
         const {
           id, price, description, media
